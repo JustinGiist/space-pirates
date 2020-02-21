@@ -1,6 +1,6 @@
 const debug = require('debug')('e-template:server')
 const http = require('http')
-
+const mysql      = require('mysql');
 const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
@@ -35,6 +35,32 @@ const server = http.createServer(app)
 server.listen(port)
 server.on('error', onError)
 server.on('listening', onListening)
+
+
+var connection = mysql.createConnection({
+  host     : '127.0.0.1',
+  user     : 'root',
+  password : ''
+});
+ 
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+ 
+  console.log('connected as id ' + connection.threadId);
+  
+});
+connection.query('USE player', function(error, results){
+  if(error) throw error;
+    console.log("space pirates database selected");
+});
+connection.query('Select * FROM spaceship', function(error, results){
+  if(error) throw error;
+    console.log(results);
+});
+
 
 /**
  * Normalize a port into a number, string, or false.
