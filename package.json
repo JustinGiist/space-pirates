@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-service": "^3.2.0",
+    "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "concurrently": "^4.1.0",
@@ -30,6 +30,6 @@
     "sass-loader": "^7.0.1",
     "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.3.12"
   }
 }
